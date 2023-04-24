@@ -44,7 +44,8 @@
         const flip = true; // whether to flip the webcam
         const width = 200;
         const height = 200;
-        webcam = new tmImage.Webcam(width, height, flip);
+//         webcam = new tmImage.Webcam(width, height, flip);
+	    webcam = new tmImage.Webcam(width, height, flip, { facingMode: "environment" });
         await webcam.setup(); // request access to the webcam
 
         if (isIos) {
