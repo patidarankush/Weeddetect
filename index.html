@@ -18,12 +18,27 @@
 		  if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
   console.log("Let's get this party started")
 }  
-	  getUserMedia({
-  audio: true,
-  video: {
-    facingMode: { exact: "environment" },
-  },
-});
+	 const videoConstraints = {
+  facingMode: { exact: "environment" },
+};
+
+navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true })
+  .then(function(stream) {
+    // Success
+    getUserMediaSuccess(stream);
+  })
+  .catch(function(error) {
+    // Error
+    console.error('Error accessing media devices.', error);
+  });
+
+function getUserMediaSuccess(stream) {
+  const video = document.createElement('video');
+  video.srcObject = stream;
+  video.setAttribute('playsinline', true); // required to tell iOS safari we don't want fullscreen
+  video.play();
+  document.getElementById('webcam-container').appendChild(video);
+}
 
 	  </script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
