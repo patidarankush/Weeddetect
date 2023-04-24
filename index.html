@@ -69,11 +69,11 @@
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
+        const flip = false; // whether to flip the webcam
         const width = 200;
         const height = 200;
         webcam = new tmImage.Webcam(width, height, flip);
-        await webcam.setup(); // request access to the webcam
+        await webcam.setup({ facingMode: "environment" }); // request access to the webcam
 
         if (isIos) {
             document.getElementById('webcam-container').appendChild(webcam.webcam); // webcam object needs to be added in any case to make this work on iOS
