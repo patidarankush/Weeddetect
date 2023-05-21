@@ -57,20 +57,20 @@
   </script>
   
   <!--button test javascript start-->
-  <script type="text/javascript">
-    const requestButton = document.getElementById('requestButton');
+ <script type="text/javascript">
+  const requestButton = document.getElementById('requestButton');
 
   requestButton.addEventListener('click', () => {
-   fetch('https://192.168.19.20:3000')
-  .then(response => response.json())
-  .then(data => {
-    console.log('Data sent successfully:', data);
-  })
-  .catch(error => {
-    console.error('Error:', error);
+    fetch('https://weedio-3jk7.onrender.com/data')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Data received:', data); // Log the data in the console
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   });
-  });
-  </script>
+</script>
   <!--button test javascript end-->
   
   
