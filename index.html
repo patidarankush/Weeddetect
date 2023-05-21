@@ -61,7 +61,7 @@
     const requestButton = document.getElementById('requestButton');
 
   requestButton.addEventListener('click', () => {
-   fetch('https://192.168.19.20:3000/data')
+   fetch('https://192.168.19.20:3000')
   .then(response => response.json())
   .then(data => {
     console.log('Data sent successfully:', data);
