@@ -61,14 +61,14 @@
     const requestButton = document.getElementById('requestButton');
 
   requestButton.addEventListener('click', () => {
-    fetch('http://192.168.19.20:3000/data')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Data sent successfully:', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+   fetch('https://192.168.19.20:3000/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Data sent successfully:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
   });
   </script>
   <!--button test javascript end-->
